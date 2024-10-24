@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      fundo-e-borda {
+        background-color: red;
+        border: 5px solid yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="fundo-e-borda">
+      Este texto terá um background da cor "Aqua" e borda de 2px, sólida e
+      vermelha.
+    </p>
+    <p>
+        Foi definido um estilo para a classe "fundo-e-borda", porém, a mesma foi alterada usando a função .CSS
+    </p>
+
+    <script src="jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        //Varios comando css em uma linha so
+        $('.fundo-e-borda').css({ 'background-color': 'aqua', border: '2px solid red' ,width:500 , padding:100})
+      })
+    </script>
+  </body>
+</html>
+                      

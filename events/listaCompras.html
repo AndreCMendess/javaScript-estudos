@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linguagem de scripts</title>
+</head>
+<body>
+    <h1>Compras de mercado</h1>
+    <p>
+        Nome do Item:
+        <input type="text" id="item">
+    </p>
+
+    <button onclick="adicionar()">Adicionar</button>
+
+    <h3>Lista:</h3>
+    <div id="listaDeCompras">
+
+    </div>
+
+    <script type="text/javascript">
+
+        //Cria um vetor
+        let listaDeItens = [];
+
+        //Funçao para adicionar item a lista de itens
+        function adicionar(){
+            //Cria um novo iten que recebe o valor digitado
+            let novoItem = document.getElementById("item").value;
+            //Adiciona o novo iten a lista de itens
+            listaDeItens.push(novoItem);
+            //Reseta o valor do campo de entrada
+            document.getElementById("item").value="";
+
+            //Cria a variavel
+            let conteudoLista ="";
+            //Itera sobre todos os itens da lista
+            for(let i = 0; i <listaDeItens.length; i++){
+                //Adiciona os itens um por um em palagrafos
+                conteudoLista += "<p id ='" + i  + "' onclick = 'riscar(" + i + ")'>" + listaDeItens[i] + "</p>";
+            }
+
+            //Mostra a todos os itens na pagina
+            document.getElementById("listaDeCompras").innerHTML = conteudoLista;
+        }
+
+        /*function adicionar(){
+            let conteudoAntigo = document.getElementById("listaDeCompras").innerHTML;
+            let conteudoNovo = "<p>" + document.getElementById("item").value + "</p>";
+            document.getElementById("listaDeCompras").innerHTML= conteudoAntigo + conteudoNovo;
+        }*/
+
+        function riscar(id){
+
+            // Verifica se o elemento buscado pelo id não possui estilização
+            if(document.getElementById(id).style.cssText == ""){
+                // Se não ter nenhun estilo aplica-se o seguinte estilo
+                document.getElementById(id).style.cssText = "text-decoration: line-through";
+
+            }else{
+                // Se tiver , remove o estilo
+                document.getElementById(id).style.cssText = "";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

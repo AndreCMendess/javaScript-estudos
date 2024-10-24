@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+      <html lang="pt">
+        <head>
+          <meta charset="UTF-8" />
+          <title>Evento Keypress</title>
+        </head>
+        <body>
+          <div>
+              Digite a senha: <input type="password" id="txtSenha" />
+              <span id="spnDica" style="font-size: smaller; color: red;">A senha deve ter ao menos 6 caracteres</span>
+          </div>
+          <div>
+              Repita a senha: <input type="password" id="txtSenhaRepete" />
+          </div>
+          <div>
+              <button id="btnOk">Definir Senha</button>
+              <span id="spnResultado"></span>
+          </div>
+
+          <script src="jquery.js"></script>
+          <script>
+            $(document).ready(function () {
+              //ao iniciar a página, esconte a dica
+             $("#spnDica").hide();
+
+             $("#txtSenha").change(function(){
+                let senha = $("#txtSenha").val();
+                if(senha.length < 6){
+                    $("#spnDica").show();
+                }else{
+                    $("#spnDica").hide();
+                }
+
+             });
+
+             //evento dispara quando clicar no botao
+
+             $("#btnOk").click(function(){
+
+                // variavel senha recebe texto do primeiro input
+                let senha = $("#txtSenha").val(),
+                // variavel senha 2 recebe texto do segundo input
+                    senha2 = $("#txtSenhaRepete").val();
+             
+                    
+                // se a senha for maior que 6 e as senhas forem a mesma a senha é valida
+             if(senha.length >=6 && senha == senha2){
+                $("#spnResultado").text("Senha Valida!").css("color","green");
+             }else{
+                $("#spnResultado").text("Senha Inválida!").css("color", "red");
+             }
+            })
+             });
+
+          </script>
+        </body>
+      </html>
+                  

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="jquery.js"></script>
+    <script>
+        //Por meio da opacidade do css a foto aparece e desaparece
+      $(document).ready(function () {
+        $('#desaparecer').click(function () {
+          $('#foto').fadeOut()
+        })
+        $('#aparecer').click(function () {
+          $('#foto').fadeIn()
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <button id="desaparecer">Desaparecer</button>
+    <button id="aparecer">Aparecer</button>
+    <br />
+    <img id="foto" src="carro01.jpg" />
+  </body>
+</html>
+            

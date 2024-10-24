@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+        b {
+          color: red;
+        }
+        i {
+          color: blue;
+        }
+      </style>
+  </head>
+  <body>
+    <p id="p1">
+      Este texto está dentro de uma tag "p" e o seu id é "p1"
+    </p>
+    <button id="copiar">Copiar texto de p2 para p1</button>
+    <p id="p2">
+      Este texto está está dentro de uma tag "p" e o seu id é "p2"
+    </p>
+    <hr/>
+
+    <p id="p3"> Este texto está dentro de uma tag "p" e o seu id é "p3"</p>
+    <button id="copiar2">Copiar texto de p3 para p4</button>
+    <p id="p4">
+      Este texto está está dentro de uma tag "p" e o seu id é "p4".
+      <b>Este trecho está em negrito!</b>
+      <i>Este trecho está em itálico!</i>
+    </p>
+    <script src="jquery.js"></script>
+    <script>
+    $(document).ready( function(){
+        $("#copiar").click(function (){
+            //Salva o texto do paragrafo p2 em uma variavel
+            var texto = $("#p2").text();
+            //Atribui o texto dentro da variavel  para o tparagrafo de id p1
+            $("#p1").text(texto);
+        })
+      })
+
+    $(document).ready(function(){
+        $("#copiar2").click(function (){
+
+            var conteudo_p4 = $("#p4").html();
+
+            $("#p3").html(conteudo_p4);
+            //Nesse caso obtem o texto e style , todo o conteudo do html
+        })
+    })
+    </script>
+  </body>
+</html>

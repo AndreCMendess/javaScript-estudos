@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+      <title>Linguagem de Scripts</title>
+      <meta charset="utf-8">
+  </head>
+  <body>
+      <form id="formulario">
+          <h1 id="titulo">Login</h1>
+          <p>
+              <label>Usuário:</label>
+              <input type="text" id="usuario">
+          </p>
+          <p>
+              <label>Senha:</label>
+              <input type="password" id="senha" value="123">
+          </p>
+          <input type="submit" value="Acessar">
+      </form>
+      <script type="text/javascript">
+          let elemento = document.getElementById('senha');
+          alert(elemento.value);
+      </script>
+  </body>
+</html>

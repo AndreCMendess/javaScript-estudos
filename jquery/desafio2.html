@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 2</title>
+</head>
+<body>
+    <input type="text" id="campo">
+
+    <script src="jquery.js"></script>
+
+    <script>
+
+        $(document).ready(function (){
+        
+            //Evento no input quando digitar
+            $("#campo").on("input",function(){
+                // O input recebe o valor escrito em maiusculo
+                this.value = this.value.toUpperCase();
+            })
+
+
+            //Evento de pressionar uma tecla
+            $("#campo").keypress(function(event){
+                //O codigo wich retorna o codigo ascii , entao ele verifica se a tecla enter(13) foi apertada
+                if(event.which === 13){
+                    //Cria um alerta com o valor do input
+                    alert($(this).val());
+                    //Limpa a caixa de texto
+                    $(this).val("");
+                }
+            })
+        });
+
+    </script>
+    
+</body>
+</html>

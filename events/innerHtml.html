@@ -1,0 +1,22 @@
+<html lang="pt-br">
+    <head>
+      <title>Linguagem de Scripts</title>
+      <meta charset="utf-8">
+    </head>
+    <body>
+      <div id="meuElemento">
+        <p>Conteúdo original</p>
+      </div>
+      <button onclick="atualizarConteudo()">Atualizar</button>
+
+      <script type="text/javascript">
+        function atualizarConteudo() {
+           let conteudoAntigo = document.getElementById("meuElemento").innerHTML;
+           let conteudoNovo = "+ o Conteudo Novo";
+           document.getElementById("meuElemento").innerHTML = conteudoAntigo + conteudoNovo;
+          
+        }
+      </script>
+    </body>
+  </html>              
+              

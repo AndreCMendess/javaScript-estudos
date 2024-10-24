@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linaguem de script AJAX</title>
+</head>
+<body>
+    <button type="button" onclick="carregarAjax()">Carregar AJAX</button>
+    <div id="resultado">
+         <!-- Os dados carregados serão exibidos aqui -->
+    </div>
+
+    <script type="text/javascript">
+
+        function carregarAjax(){
+            // Cria um objeto XMLHttpRequest
+            let xhr = new XMLHttpRequest();
+            
+            // Aponta a url que sera feita a requisição
+            let url = 'http://example.com/api/data';
+
+            // Funçao de manipulaçao de exemplo
+            xhr.onreadystatechange = function() {
+
+                if(xhr.readyState == 4 && xhr.status == 200){
+
+                    //Cria a variavel que recebe a resposta
+                    let resposta = xhr.responseText;
+
+                    //Atualiza a pagina com os dados da resposta
+                    document.getElementById("resultado").innerHTML = resposta;
+                }
+
+            }
+
+            //Realiza a requisição
+            xhr.open('GET',url,true);
+            xhr.send();
+        }
+
+    </script>
+    
+</body>
+</html>

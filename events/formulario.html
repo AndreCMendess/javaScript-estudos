@@ -1,0 +1,67 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+   <form id="formulario">
+    <h1 id="titulo">Login</h1>
+
+    <p>
+        <label>E-mail:</label>
+        <input type="text" id="email" onblur="validarEmail()">
+    </p>
+    <p>
+        <label>Senha:</label>
+        <input type="password" id="senha" onblur="validarSenha()">
+    </p>
+    <input type="submit" value="Acessar" onclick="fazerLogin()">
+   </form>
+    <script type="text/javascript">
+
+        //Verifica se o valor digitado possui @
+        function validarEmail(){
+            // Recebe o valor digitado no input do email
+            let email = document.getElementById("email").value;
+            // Verifica se foi incluido o caracter @
+            if(email.includes("@")){
+                // Se for verdadeiro retorna true
+                return true;
+            }else{
+                // Se for falso retorna false
+                alert("E-mail invalid")
+                return false;
+            }
+        }
+
+        //Verifica se a senha é maior que 6 digitos 
+        function validarSenha(){
+            let senha = document.getElementById("senha").value;
+            if(senha.length > 6){
+                return true;
+            }else{
+                alert("A senha deve ser maior que 6 digiitos");
+                return false;
+            }
+        }
+
+        //Verifica se todos as validaçoes sao verdadeiras e faz login
+        function fazerLogin(){
+            let email = document.getElementById("email").value;
+            let senha = document.getElementById("senha").value;
+            if(email && senha){
+                alert("Login feito com sucesso")
+                
+            }else{
+                alert("Nao foi possivel logar , verifique os campos de email e senha")
+               
+            }
+
+        }
+
+
+
+    </script>
+</body>
+</html>

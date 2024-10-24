@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seletores</title>
+  </head>
+  <body>
+    <h2>Este é um título</h2>
+    <p>Este é um parágrafo</p>
+    <p>Este é outro parágrafo</p>
+
+    <button>Clique aqui os parágrafos</button>
+   
+
+    <script src="jquery.js"></script>
+    <script>
+     $(document).ready(function () {
+
+        $("p").css("background-color", "#CCC");
+        var fontSize = $("p").css("font-size");
+        alert(fontSize);
+        
+     });
+
+    </script>
+  </body>
+</html>
+            

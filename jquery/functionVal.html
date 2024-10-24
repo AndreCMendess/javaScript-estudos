@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" /> 
+  </head>
+  <body>
+    <b>Digite o nome de uma cor:</b>
+    <input type="text" id="nome" name="nome" />
+    <p> Olá <span id="spnNome"> [seu nome] </span>, tudo bem?</p>
+    <button id="confirmar">Aplicar</button>
+
+    <script src="jquery.js"></script>
+    <script>
+    $(document).ready(function(){
+        //Quando clicar no botao de id confirmar
+       $("#confirmar").click(function(){
+        //Armazena na variavel o valor digitado na caixa de texto de id nome
+         var novaCor = $("#nome").val();
+         //Aplica uma nova cor no background com a cor da variavel
+          $("body").css("background-color",novaCor);
+       })
+
+       $("#confirmar").click(function(){
+        var nome = $("#nome").val();
+        $("#spnNome").text(nome);
+       })
+      })
+    </script>
+  </body>
+</html>
+            

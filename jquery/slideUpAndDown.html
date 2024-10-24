@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="jquery.js"></script>
+    <style>
+      #foto {
+        border: 1px solid black;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        // reduz em 50% a opacidade:
+        $('#slideup').click(function () {
+          $('#img').slideUp('slow')
+        })
+        $('#slidedown').click(function () {
+          $('#img').slideDown('slow')
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <img id="img" src="../img.jpg" width="500">
+    <button id="slideup">SlideUp</button>
+    <button id="slidedown">SlideDown</button>
+    <br />
+  </body>
+</html>

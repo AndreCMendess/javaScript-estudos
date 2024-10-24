@@ -1,0 +1,49 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Tema Claro e Tema Escuro</title>
+    <style>
+        .tema-claro{
+            background-color: white;
+            color: black;
+        }
+
+        .tema-escuro{
+            background-color: black;
+            color:white;
+        }
+
+        body{
+            background-color: white;
+            color: black;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1>Temas Escuro e Claro</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor similique ratione quae eum, qui ullam distinctio modi quas tempore voluptas quibusdam quia quis asperiores accusantium cumque repellat minima. Illo, voluptates.</p>
+    
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis iste error, cupiditate ex cum alias eum adipisci consectetur, laboriosam recusandae sunt enim nobis deleniti, ullam dolor aspernatur aut dolorem officia./p> 
+
+      <button id="tema-black">Tema Escuro</button>  
+      <button id="tema-white">Tema Claro</button>
+
+    <script src="./jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#tema-black").click(function(){
+                $("body").remove("tema-claro").addClass("tema-escuro");
+            })
+
+            $("#tema-white").click(function() {
+                $("body").removeClass("tema-escuro").addClass("tema-claro");
+            })
+
+        }       
+    );
+    </script>
+</body>
+</html>

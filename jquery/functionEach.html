@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Função Each</title>
+    <style>
+      .off {
+        background-color: #ccc;
+      }
+      .on {
+        background-color: red;
+      }
+      li {
+        border-radius: 4px;
+        padding: 8px;
+        background-color: navy;
+        color: white;
+        display: inline;
+      }
+      ul {
+        list-style: none;
+      }
+      input.busca {
+        margin-left: 40px;
+        width: 350px;
+        height: 25px;
+        font-size: 16px;
+        padding: 4px;
+      }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+      //Carrega o documento da pagina
+      $(document).ready(function () {
+        //Quando digitar na caixa de texto u mevento sera acionado
+        $("#filtro").keyup(function () {
+          //Variavel termo recebe o valor escrito na caixa de texto
+          var termo = $("#filtro").val().toLowerCase();
+          //Seleciona todos os nomes da lista e o método each itera cada um deles
+          $("ul.nomes li").each(function (index) {
+            //Os itens serao iterados e o esperado com os caracteres escrito na caixa de texto recebera a classe on
+            $(this).addClass("off");
+            $(this).removeClass("on");
+            //Armazena na variavel o nome na lista encontrado e o deixa minusculo
+            var li_texto = $(this).text().toLowerCase();
+
+            //Verifica se o nome escrito na caixa de texto é o mesmo que um encontrado na lista e se o caractere escrito é maior que 1
+            if (li_texto.search(termo) != -1 && termo.length > 1) {
+              //Se encontrado o iten recebe a clase on para se destacar e o resto dos nomes da lista recebe off
+              $(this).removeClass("off");
+              $(this).addClass("on");
+            }
+          });
+        });
+      });
+
+      /*
+      Resumo do Comportamento:
+      Este código implementa um filtro dinâmico de pesquisa.
+      Quando o usuário digita no campo de entrada (com id="filtro"),
+      ele vai comparando o texto digitado com o conteúdo de cada item da lista (<li>).
+      Se o texto dentro de um item da lista corresponde ao termo digitado,
+      o item da lista é exibido (removendo a classe off e adicionando a classe on).
+      Caso contrário, ele permanece oculto.
+      */
+     
+    </script>
+  </head>
+  <body>
+    <input type="text" id="filtro" class="busca" />
+    <ul class="nomes">
+      <li>Adriana</li>
+      <li>Alice</li>
+      <li>Daltron</li>
+      <li>Fabiano</li>
+      <li>Fernando</li>
+      <li>Fabrício</li>
+      <li>Lucas</li>
+      <li>Gustavo</li>
+      <li>Mauro</li>
+      <li>Ronald</li>
+    </ul>
+  </body>
+</html>

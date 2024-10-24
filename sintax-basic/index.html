@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Linguagem de Scripts</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <!-- <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="https://exemplo.com.br/js/script.js"></script>      
+    -->
+    <script type="text/javascript">
+      console.log("Hello World!");
+
+      alert("Hello");
+
+      //Declarações de variaveis
+
+      let mensagem;
+      mensagem = "Hello World!";
+      alert(mensagem);
+
+      let messages = "Hello World!",
+        user = "admin",
+        age = 45;
+      console.log(messages);
+
+      mensagem = "Hello";
+      let usuario = "admin";
+      let idade = 45;
+      console.log(mensagem, usuario, idade);
+
+      let hello = "Hello World";
+      let message = hello;
+      console.log(hello, message);
+
+      var msg = "Hellow World Var";
+
+      //varaivel var declara uma variável em escopo de função.
+      var x = 1;
+      if (true) {
+        var x = 2;
+      }
+      alert(x);
+      // Conclusão: a variável x que declaramos no if irá subscrever a variável x que declaramos no começo pois VAR atua em contexto de função
+
+      //variável let atua em escopo de bloco.
+      let l = 1;
+      if (true) {
+        let l = 2;
+      }
+      alert(l);
+      // Conclusão: como as variáveis let atuam em contexto de bloco, a variável do bloco IF não subscreve a variável declarada no inicio
+
+      let type; // undefined
+      x = 0; // number
+      x = true; // boolean
+      x = "texto"; // string
+      /* 
+  Adição	+	                      
+
+  let resultado = 10 + 10;
+  alert(resultado);                                                                                                                 
+        20                                                                                                               
+                                        
+  Subtração	-	
+                        
+  let resultado = 33 - 18;
+  alert(resultado);                                                                                                                                                                                 
+       15
+
+Multiplicação	*	
+                        
+  let resultado = 9 * 8;
+  alert(resultado);                                                                                                                                                                                                  
+      72
+
+Divisão	/	
+                        
+  let resultado = 29 / 3;
+  alert(resultado);                                                                                                                                                                                                                                   
+    9,66666666
+
+Resto da divisão	%	
+                        
+  let resultado = 29 % 3;
+  alert(resultado);                                                                                                                                                                                                                                                    
+      2
+
+Exponencial	**	
+                        
+  let resultado = 9 ** 3; //9³
+  alert(resultado);                                                                                                                                                                                                                                                                                
+        729
+*/
+
+      // Concatena duas strings
+      let text = "Hello " + "World";
+      console.log(text);
+
+      //Se algum dos operandos for uma string, o outro também será convertido em uma string.
+      console.log("1" + 1);
+
+      alert(2 + 2 + "1"); // "41" e não "221"
+
+      alert("1" + 2 + 2); // "122" e não "14"
+
+      //Qualquer outro operador aritmetico trabalha com apenas numeros
+      alert(6 - "2"); // a string '2' é convertida para 2 e o resultado da operação é 4
+
+      alert("6" / "2"); // ambas string são convertidas e o resultado da operação é 3
+
+      //Operadores logicos ( || , && , ! )
+
+      //Identificar o tipo de dado
+
+      let string = "123";
+      console.log(typeof string); //string
+
+      let numero = 123;
+      console.log(typeof numero); // number
+
+      let booleano = true;
+      console.log(typeof booleano); // boolean
+
+      //Converter para String
+
+      let booleanoo = true;
+      console.log(typeof booleanoo);
+
+      let stringg = String(booleanoo);
+      console.log(typeof string);
+
+      //Converter para Number
+
+      let string2 = "123";
+      alert(typeof string); //string
+
+      let numero2 = Number(string);
+      alert(typeof numero); //number
+
+      let string3 = "1.23";
+      console.log(typeof string3);
+
+      let numberInt = parseInt(string3);
+      console.log("Value: " + numberInt + " - Type " + typeof numberInt);
+
+      let numberFloat = parseFloat(string3);
+      console.log("Value: " + numberFloat + " - Type: " + typeof numberFloat);
+
+      // Colocar limite nas casas decimais
+      console.log(
+        "Value: " + numberFloat.toFixed(1) + " - Type: " + typeof numberFloat
+      );
+
+      // Condicionais
+
+      if (1 < 2) {
+        console.log("The Condition is true");
+      } else {
+        console.log("The Condition is false");
+      }
+
+      let nota = 5;
+      if (nota > 6) {
+        //Se for maior que 6 , o codigo terminara aqui mesmo , e nao vai ter a mensagem de nota maxima
+        //So vai para a proxima opçao se  a atual for falsa
+        console.log("Nota average");
+      } else if (nota == 10) {
+        console.log("Nota maximum");
+      } else {
+        console.log("Nota low");
+      }
+
+      //Repetição  while,do while,for (mesma sintaxe do java)
+
+      let n = 20;
+      while (n > 10) {
+        console.log(
+          "Enquanto a condiçao for verdadeira o bloco de codigo sera executado"
+        );
+        n--;
+      }
+
+      let n2 = 20;
+      do {
+        console.log(
+          "Sera executada oque esta dentro do corpo do loop , e caso seja verdadeira sera executada novamente "
+        );
+        n2--;
+      } while (n2 > 10);
+
+      //incio condiçao codigo
+      for (let n = 10; n > 1; n--) {
+        console.log(
+          "O inicio é executado ao entrar pela primeira vez , a condiçao é verificada a cada iteraçao do loop , se for falsa o loop para , o codigo sera executado enquanto a condiçao for verdadeira"
+        );
+      }
+      //fim
+
+      //Declaração de funçao
+      function nomeFuncao(parametro1, parametro2) {
+        //corpo
+      }
+
+      let variavelExterna = "Variavel Externa";
+      //No JavaScript  nao é preciso informar o tipo do retorno
+      function mostrarMensagem() {
+        variavelExterna = "Variavel Externa Modificada";
+        let msg = "Hellow World ! Variavel local + " + variavelExterna;
+        console.log(msg);
+      }
+
+      // Uma funçao tem acesso a uma variavel externa e tambem pode modificala
+      console.log(variavelExterna); // variavel sen modificar
+      mostrarMensagem();
+      mostrarMensagem();
+      console.log(variavelExterna); // Variavel modificada após o metodo ser chamado
+
+      // Uma funçao com parametros
+      function somar(numero1, numero2) {
+        console.log(numero1 + numero2);
+      }
+      somar(27, 30);
+
+      // Tambem pode colocar valores como padrao , no caso da chamada da função nao receber os valores esperado
+      function somar(numero1 = 0, numero2 = 0) {
+        return numero1 + numero2;
+      }
+      let resultado = somar(30);
+      console.log(resultado);
+
+      // Vetores
+      let vetor = new Array();
+      //ou
+      let vt = [];
+      let stringArray = ["um", "dois" , "tres"];
+      let numericoArray = [1 , 2 , 3 , 4];
+      let decimalArray = [1.1 , 1.2 , 1.3];
+      let booleanArray = [true,false,false,true];
+
+      //No javascript isso é permitido
+      let dados = [1,"dois","3",true,4000,5.5];
+
+      let frutas = ["maça","laranja","abacaxi"];
+      console.log(frutas[0]);
+      console.log(frutas[1]);
+      console.log(frutas[2]);
+
+      frutas.push("banana");//adiciona um novo elemento ao vetor
+      console.log(frutas[3]);
+      frutas.pop();//remove o ultima elemento do vetor
+      frutas.shift();//remove o primeiro elemento do vetor
+
+
+    </script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Linguagem de Scripts</title>
+    <meta charset="utf-8" />
+  </head>
+  <body></body>
+</html>

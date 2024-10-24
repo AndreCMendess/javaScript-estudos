@@ -1,0 +1,24 @@
+<html lang="pt-br">
+    <head>
+      <title>Linguagem de Scripts</title>
+      <meta charset="utf-8">
+    </head>
+    <body>
+      <div id="meuElemento" style="color: blue">
+        <p>Conteúdo original</p>
+      </div>
+      <button onclick="atualizarConteudo()">Atualizar</button>
+
+      <script type="text/javascript">
+         function atualizarConteudo(){
+            document.getElementById("meuElemento").style.color = "Black";
+            document.getElementById("meuElemento").style.fontSize = "10rem";
+            document.getElementById("meuElemento").style.textAlign = "center";
+            document.getElementById("meuElemento").style.backgroundColor = "aqua";
+            document.getElementById("meuElemento").style.fontFamily = "Serif";          
+         } 
+         // Ou utilza-se dessa maneira em apenas um texto
+         // document.getElementById("meuElemento").style.cssText = "color: red; font-size: 20px";
+      </script>
+    </body>
+  </html>    

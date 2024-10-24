@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Linguagem de Scripts</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <table id="tabela">
+      <tr>
+        <td>O que você está aprendendo?:</td>
+        <td>
+          <label>
+            <input type="radio" name="tecnologia" value="HTML"> HTML
+          </label>
+          <label>
+            <input type="radio" name="tecnologia" value="CSS"> CSS
+          </label>
+          <label>
+            <input type="radio" name="tecnologia" value="JavaScript" checked> JS
+          </label>
+        </td>
+      </tr>
+    </table>
+    <script type="text/javascript">
+     //Busca todos os elementos com a tag input
+     let elementos = document.getElementsByName('tecnologia');
+     //Retorna todos os elementos encontrados
+     alert("Quantidade de elementos com name tecnologia " + elementos.length);
+
+     // itera todos os elementos da radio
+     for(let l of elementos){
+
+        //Nomes das tecnologias encontradas
+        alert("Nome da tecnologia : " + l.value);
+
+        //Verifica se o radio foi selecionado
+        if (l.checked){
+
+            // Se o radio selecionado é JS
+            if(l.value == "JavaScript"){
+                // Envia mensagem dizendo que selecionou a certa
+            alert("Esta certo");
+         }
+        }   
+     }
+    </script>
+  </body>
+</html>
