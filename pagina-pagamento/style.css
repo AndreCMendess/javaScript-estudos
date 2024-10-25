@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;    
+    background-color: rgb(62, 59, 59);
+}
+
+main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;  
+}
+
+h1{
+    text-align: center;  
+    margin-top: 1rem; 
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif, 'Arial Narrow', Arial, sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+section{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 1rem;
+    background-color: white;
+}
+
+#btn-dados , #btn-pagamento{
+
+    margin-top: 1rem;
+    display: flex;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    border:none;
+    background-color: black;
+    cursor: pointer;
+}
+
+#btn-dados:hover , #btn-pagamento:hover{
+    background-color: rgb(151, 151, 151);
+}
+
+
+

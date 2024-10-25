@@ -1,0 +1,26 @@
+.forma-pagamento{
+    display: flex;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border: 1px solid;
+    border: none;
+    width: 300px;
+}
+
+.forma-pagamento form{
+    display: flex;  
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    
+}
+
+.forma-pagamento form div{
+    display: flex;
+    gap:2rem;
+  
+}

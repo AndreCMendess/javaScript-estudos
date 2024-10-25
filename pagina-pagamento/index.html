@@ -1,0 +1,254 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade3</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="forma-de-pagamento.css">
+    <link rel="stylesheet" href="tipo-de-pagamento.css">
+</head>
+<body>
+    <head>
+        <h1>Pagamento</h1>
+    </head>
+    <main>
+        <section class="forma-pagamento">
+            <h2>Digite o valor e escolha forma de pagamento</h2>
+            <form>
+                <div>
+                    <label><strong>Valor</strong></label>
+                <input type="text" id="valor"><br/>
+                </div>
+               <div> 
+                <input type="radio" id="pix" name="tipoPagamento" value="pix">
+                <label for=""><strong>PIX</strong></label>      
+                <input type="radio" id="cartao" name="tipoPagamento" value="cartao">
+                <label for=""><strong>Cartão de Crédito</strong></label><br/>
+               </div>
+              <div>
+                <button type="button" id="btn-dados" value="Informar Dados"> Informar Dados </button>
+              </div>
+            </form>        
+        </section>
+      <div class="tipos">
+        <section class="pix">
+            <h2>PIX</h2>
+           <form>
+            <div>
+                <label><strong>CPF</strong></label>
+                <input type="text" id="cpf-pix">
+            </div>    
+            <div>
+                <label><strong>Total:</strong> R$<span id="valorTotal">0,00</span></label>
+            </div>
+           </form>
+        </section>
+        <section class="cartao">
+            <h2>Cartão de Crédito</h2>
+            <form>        
+                <div>
+                    <label><strong>Numero</strong></label>
+                    </label>
+                    <input type="text" id="n-cartao">              
+                    <img id="img-cartao" src="" alt="" width="30" height="20">
+                </div>     
+                
+                <p id="validar-cartao">mensagem de validação</p><br/>
+
+                <div>
+                    <label><strong>Titular</strong></label>
+                <input type="text" id="titular">
+                </div>
+
+               <div>
+                <label><strong>Cód. Segurança</strong></label>
+                <input type="text" id="cod-seguranca">
+               </div>
+
+               <div>
+                <label><strong>Vencimento</strong></label>
+                <input type="date" id="vencimento">
+               </div>
+
+               <div>
+                <label for=""><strong>Parcelas</strong></label>
+                <select name="p" id="parcelas">
+                    <option value="1">1x</option>
+                    <option value="2">2x</option>
+                    <option value="3">3x</option>
+                    <option value="4">4x</option>
+                    <option value="5">5x</option>
+                </select>
+                </div>
+
+                <div id="parc">
+                    <span><strong>1x</strong> R$<span id="1x">0,00</span></span>
+                    <span><strong>2x</strong> R$<span id="2x">0,00</span></span>
+                    <span><strong>3x</strong> R$<span id="3x">0,00</span></span>
+                    <span><strong>4x</strong> R$<span id="4x">0,00</span></span>
+                    <span><strong>5x</strong> R$<span id="5x">0,00</span></span>
+                </div>   
+
+            </form>
+        </section>
+
+      </div>
+        <input type="submit" id="btn-pagamento" value="Pagar">
+    </main>
+    <script src="./jquery.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            let valorTotal = 0;
+            $(".pix").hide();
+            $(".cartao").hide();
+            $("#validar-cartao").hide();
+            $("#btn-pagamento").hide();
+
+           $("#btn-dados").click(function(){
+
+          let valor = $("#valor").val();
+
+           if(valor.length < 1 || valor === ""){
+            alert("O campo de valor deve ser preenchido");
+            $("#valor").focus();    
+           }
+
+           let tipoPagamento = $("input[name='tipoPagamento']:checked");
+            if(tipoPagamento.length === 0){
+                alert("Selecione o tipo pagamento!");
+                return;
+            }
+
+          
+
+          
+            if (tipoPagamento.val() === "pix" && valor.length > 0 && valor != "") {
+             $(".pix").show();  
+             $(".cartao").hide();  
+             let desconto = valor * 0.10;
+             valorTotal = valor - desconto;
+             $("#valorTotal").text(valorTotal);
+
+             $("#cpf-pix").change(function () {
+                
+                let cpf = $("#cpf-pix").val();
+               if(cpf.length > 0 || cpf != ""){
+
+                 $("#btn-pagamento").show();   
+              }
+             })          
+            } else if (tipoPagamento.val() === "cartao" && valor.length > 0 && valor != "") {  
+
+              $(".cartao").show(); 
+              $(".pix").hide();  
+             }
+
+           }); 
+
+
+           $("#n-cartao").change(function () {
+
+                var codigo = $("#n-cartao").val();
+
+                if(codigo === "1234"){
+                    $("#img-cartao").attr('src','./img1.jpg');
+                    $("#validar-cartao").hide();
+                }else if (codigo === "4321"){
+                    $("#img-cartao").attr('src','./img2.png');                
+                    $("#validar-cartao").hide();
+                }else{
+                    $("#validar-cartao").show();
+                    $("#validar-cartao").text("Numero de cartao invalido , o cartao deve ter iniciais de 1234 ou 4321");
+                }
+
+           });
+
+
+
+           $("#parcelas").change(function(){
+
+            var valor = parseFloat($("#valor").val());
+            var parcelas = parseInt(this.value);
+
+            valorTotal = valor;
+
+            if(parcelas === 1){
+              valorTotal = valor;
+              $("#1x").text((valorTotal).toFixed(2));
+              $("#2x").text("0.00");
+              $("#3x").text("0.00");
+              $("#4x").text("0.00"); 
+              $("#5x").text("0.00");
+
+            } else if(parcelas === 2){
+                valorTotal = valor;
+                $("#1x").text((valorTotal).toFixed(2));
+                $("#2x").text((valorTotal / 2).toFixed(2));
+                $("#3x").text("0.00");
+                $("#4x").text("0.00"); 
+                $("#5x").text("0.00");
+            } else if(parcelas <=3){
+                valorTotal = valor;
+                $("#1x").text((valorTotal).toFixed(2));
+                $("#2x").text((valorTotal / 2).toFixed(2));
+                $("#3x").text((valorTotal / 3).toFixed(2));
+                $("#4x").text("0.00"); 
+                $("#5x").text("0.00");
+            }else if(parcelas === 4){
+                valorTotal = valor + (valor * 0.5);
+                $("#1x").text((valor).toFixed(2));
+                $("#2x").text((valor / 2).toFixed(2));
+                $("#3x").text((valor / 3).toFixed(2));
+                $("#4x").text((valorTotal / 4).toFixed(2));
+                $("#5x").text("0.00");
+            }else{
+                valorTotal = valor + (valor * 0.10);               
+                $("#1x").text((valor).toFixed(2));
+                $("#2x").text((valor / 2).toFixed(2));
+                $("#3x").text((valor / 3).toFixed(2));
+                $("#4x").text((valorTotal / 4).toFixed(2));
+                $("#5x").text((valorTotal / 5).toFixed(2));
+            }
+          })
+
+
+           $("#n-cartao,#titular,#cod-seguranca,#vencimento").on('keyup change',function () {
+             validarCampos();
+           })
+
+
+         
+           $("#btn-pagamento").click(function(){
+
+           
+
+            var total = parseFloat(valorTotal);
+            $("#valorTotal").text(total.toFixed(2));
+
+            alert("Pagamento realizado com sucesso")
+           });
+
+           
+        });
+
+
+        function validarCampos(){
+           let n = $("#n-cartao").val().trim();
+           let t = $("#titular").val().trim();
+           let c = $("#cod-seguranca").val().trim();
+           let v = $("#vencimento").val().trim();
+
+           if(n === "" || t === "" || c === "" || v === ""){
+              $("#btn-pagamento").hide();
+           }else{
+              $("#btn-pagamento").show();
+           }
+
+        }
+
+    </script>
+ 
+</body>
+</html>

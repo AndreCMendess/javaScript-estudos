@@ -1,0 +1,64 @@
+h2{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.tipos{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    gap:2rem;
+  
+}
+
+.pix{
+    display:flex;
+    border: 1px solid;
+    justify-content: center;
+    padding: 2rem;
+    width: 70%;
+    align-items: center;
+    border: none;
+}
+
+.pix form{
+    display: flex;
+    gap:1rem;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    width: 100%;
+}
+
+.pix form div {
+    display:flex;
+    gap:1rem;
+}
+
+
+.cartao{
+    display:flex;
+    margin-top: 2rem;
+    border: 1px solid;
+    justify-content: center;
+    padding: 2rem;
+    width:30%;
+    border: none;
+
+}
+
+.cartao form{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+}
+
+.cartao form div {
+    display: flex;
+    gap:1rem;
+}
+
