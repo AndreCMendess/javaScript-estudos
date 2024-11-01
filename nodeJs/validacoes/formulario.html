@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validando Formulários com jQuery Mask</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+</head>
+<body>
+    <h1>Máscaras com jQuery Mask</h1>
+    <form method="post" action="" id="frm">
+        <p>
+            <label>Telefone</label><br>
+            <input type="text" id="telefone" name="telefone" required>
+        </p>
+      
+        <p>
+            <label>CEP</label><br>
+            <input type="text" id="cep" name="cep" required>
+        </p>
+      
+        <p>
+            <label>CPF</label><br>
+            <input type="text" id="cpf" name="cpf" required>
+        </p>
+      
+        <p>
+            <label>CNPJ</label><br>
+            <input type="text" id="cnpj" name="cnpj" required>
+        </p>
+      
+        <p>
+            <label>Data</label><br>
+            <input type="text" id="data" name="data" required>
+        </p>
+        <input type="submit" value="Cadastrar">
+    </form>
+    
+    <script>
+        $(document).ready(function () {
+            // Aplicando máscaras
+            $('#telefone').mask('(00) 00000-0000');
+            $('#cep').mask('00000-000');
+            $('#cpf').mask('000.000.000-00');
+            $('#cnpj').mask('00.000.000/0000-00');
+            $('#data').mask('00/00/0000');
+
+            // Validação do formulário
+            $('#frm').validate({
+                rules: {
+                    telefone: {
+                        required: true,
+                        minlength: 14 // O tamanho da máscara é 14
+                    },
+                    cep: {
+                        required: true,
+                        minlength: 10 // O tamanho da máscara é 10
+                    },
+                    cpf: {
+                        required: true,
+                        minlength: 14 // O tamanho da máscara é 14
+                    },
+                    cnpj: {
+                        required: true,
+                        minlength: 18 // O tamanho da máscara é 18
+                    },
+                    data: {
+                        required: true,
+                        minlength: 10 // O tamanho da máscara é 10
+                    }
+                },
+                messages: {
+                    telefone: {
+                        required: "Por favor, insira seu telefone.",
+                        minlength: "Por favor, insira um número de telefone válido."
+                    },
+                    cep: {
+                        required: "Por favor, insira seu CEP.",
+                        minlength: "Por favor, insira um CEP válido."
+                    },
+                    cpf: {
+                        required: "Por favor, insira seu CPF.",
+                        minlength: "Por favor, insira um CPF válido."
+                    },
+                    cnpj: {
+                        required: "Por favor, insira seu CNPJ.",
+                        minlength: "Por favor, insira um CNPJ válido."
+                    },
+                    data: {
+                        required: "Por favor, insira a data.",
+                        minlength: "Por favor, insira uma data válida."
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

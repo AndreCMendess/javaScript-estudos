@@ -1,0 +1,29 @@
+{
+  "cadastros": [
+    {
+      "login": "usuario",
+      "senha": "senha1234",
+      "id": "1"
+    },
+    {
+      "login": "usuario2",
+      "senha": "senha4321",
+      "id": "2"
+    },
+    {
+      "id": "fca3",
+      "login": "usuario3",
+      "senha": "senha1234"
+    },
+    {
+      "id": "3894",
+      "login": "usuario4",
+      "senha": "senha1234"
+    },
+    {
+      "id": "5c45",
+      "login": "aluno",
+      "senha": "213131"
+    }
+  ]
+}

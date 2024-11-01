@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Formulário</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Cadastro de Usuários</h1>
+    <form id="cadastroForm">
+        Login: <input type="text" id="login" name="login" /> <br>
+        Senha: <input type="password" id="senha" name="senha" /> <br>
+        <input type="submit" value="Enviar"/>
+    </form>
+
+    <script>
+       $(document).ready(function (){
+            $('#cadastroForm').on('submit', function(event){
+                event.preventDefault();
+
+                const login = $('#login').val();
+                const senha = $('#senha').val();
+
+                const novoCadastro = {
+                    login : login,
+                    senha : senha
+                }
+
+                $.ajax({
+                    url:'http://localhost:3000/cadastros',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(novoCadastro),
+                    success: function(data) {
+                        console.log("Cadastro realizado com sucesso:" , data)
+                    },
+                    error:function(error) {
+                        console.error("Erro ao cadastrar:" ,error)
+                    }
+                });
+            });
+       });
+    </script>
+</body>
+</html>

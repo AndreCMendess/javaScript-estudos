@@ -1,0 +1,24 @@
+{
+  "noticias": [
+    {
+      "titulo": "JavaScript",
+      "conteudo": "Linguagem JavaScript",
+      "id": "1"
+    },
+    {
+      "titulo": "JQUERY",
+      "conteudo": "Framework utilizado para java script",
+      "id": "2"
+    },
+    {
+      "id": "cfa8",
+      "titulo": "API Fetch",
+      "conteudo": "Conhecendo a API Fetch"
+    },
+    {
+      "id": "18a0",
+      "titulo": "Clean Code",
+      "conteudo": "codigo limpo"
+    }
+  ]
+}

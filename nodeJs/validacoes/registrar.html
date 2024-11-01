@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validando Formularios com JQuery Validation</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+</head>
+<body>
+    <h1>Validando formulários com JQuery Validation</h1>
+    <form method="post" action="" id="frm_registro">
+        <p>Nome: <br><input type="text" name="nome" id="nome" required></p>
+        <p>E-mail: <br><input type="text" name="email" id="email" required></p>
+        <p>Senha: <br><input type="text" name="senha" id="senha" required></p>
+        <input type="submit" value="Cadastrar">
+    </form>
+                  
+    <div id="result"></div>
+    <script src="validar.js"></script>   
+</body>
+</html>
