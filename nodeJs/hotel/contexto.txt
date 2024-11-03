@@ -1,0 +1,4 @@
+O hotel que solicitou a página proposta na atividade anterior está empolgado com os resultados.
+Para demonstrar um pouco mais das funcionalidades da página, 
+propõe-se a simulação de postagens e de recuperação de dados. 
+Para isso, será usado o simulador de serviços web JSON Server.

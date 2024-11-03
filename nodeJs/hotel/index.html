@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    >
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+
+  </head>
+  <body style="min-width: 372px">
+    <nav class="navbar navbar-info bg-dark border-bottom shadow-sm navbar-expand mb-5">
+        <div class="container">
+            <i class="bi bi-building text-white fs-2">HOTEL</i>
+        </div>
+    </nav>
+    <header class="container">
+        <div class="row">
+            <div class="col-12 col-sm-6 mb-4">
+                <h3 class="tlt display-4  fw-bold">Sinta o conforto acolhedor de nossas hospedagens</h2>  
+                  <hr class="hr">          
+                <div><p class="text-center mt-4">Hospede-se nos nossos hotéis com quartos a partir de R$ 100,00.</p></div>
+                <div class="text-center">
+                    <button class="btn btn-dark mt-4">Saiba Mais</button>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <img class="img-fluid d-md-block d-none"   src="imgs/img-header-large.jpg" alt="Quarto de hotel aconchegante">
+                <img class="img-fluid d-block d-md-none"    src="imgs/img-header-small.jpg" alt="Quarto de hotel aconchegante">
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <div class="row">
+            <h3 class="display-4 text-center text-dark mt-4 fw-bold mt-4">
+                <span class="cb">POR QUE SE HOSPEDAR EM NOSSOS HOTEIS?</span>
+            </h3>
+        </div>
+        <div class="row text-center mb-5">
+            <div class="col-md-6 col-sm-12  mt-3 d-flex align-items-center justify-content-center">           
+                <i class="bi bi-cup" style="font-size:3rem;"></i>            
+                <div>
+                    <h3>Delicioso café da manhã</h3>
+                    <p>Incluso em todas as diarias</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 mt-3 d-flex align-items-center justify-content-center">
+                <i class="bi bi-geo-alt"  style="font-size:3rem;"></i>
+                <div>
+                    <h3>Facil acesso</h3>
+                <p>Perto dos principais pontos turisticos</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h3 class="tlt display-4 text-center text-dark fw-bold mb-4">Nossos Quartos</h3>
+        </div>
+        <div class="qrts row p-2">
+            <div class="col-12 col-md-4 text-center mb-5">
+                <img class="img-fluid mb-1" src="imgs/room.jpg" alt=""> 
+                <span><strong class="qrt">Suite Solteiro</strong></span>
+            </div>
+            <div class="col-12 col-md-4 text-center mb-5">
+                <img  class="img-fluid mb-1" src="imgs/room2.jpg" alt="">
+                <span><strong class="qrt">Suite Casal</strong>
+            </div>
+            <div class="col-12 col-md-4 text-center mb-5">
+                <img  class="img-fluid mb-1" src="imgs/room3.jpg" alt="">
+                <span><strong class="qrt">Suite Master</strong></span>
+            </div>
+        </div> 
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active " data-bs-interval="3000">
+                <img src="./imgs/room.jpg" class="d-block  img-fluid" alt="...">
+              </div>
+              <div class="carousel-item" data-bs-interval="3000">
+                <img src="./imgs/room2.jpg" class="d-block  img-fluid" alt="...">
+              </div>
+              <div class="carousel-item" data-bs-interval="3000">
+                <img src="imgs/room3.jpg" class="d-block  img-fluid" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </main>
+    <footer class="bg-dark">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-3 mt-4 ">
+                    <h3 class="text-white">Faça sua reserva</h3>
+                    <p class="text-white">Entre em contato conosco informando as datas desejadas.<br>
+                      Lhe Retornaremos informando a disponibilidade e repassando os detalhes da reserva.
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 mt-4">
+                    <form id="frmReserva" method="post">
+                        <fieldset class="row">
+                            <legend class="text-white">Dados Pessoais</legend>
+                            <div  class="col-12 col-md-6 mb-3">
+                                <label for="txt_nome" class="form-label text-white">Nome</label>
+                                <input type="text" id="txt_nome" class="form-control" name="nome" placeholder="Digite seu nome aqui">
+                            </div>
+                            <div class="col-12 col-md-6  mb-3">
+                                <label for="txt_email" class="form-label text-white">Email</label>
+                                <input type="email" id="txt_email" class="form-control" name="email" placeholder="Digite seu email aqui" >
+                            </div>
+
+                            <div class="col-6 col-md-6  mb-3" >
+                                <label for="data_entrada" class="form-label text-white">Data de Entrada</label>
+                                <input type="date" id="data_entrada" class="form-control" name="entrada"   placeholder="Digite a data de entrada aqui">
+                            </div>
+                            
+                            <div class="col-6 col-md-6  col-sm-3 mb-3">
+                                <label for="data_saida" class="form-label text-white">Data de Saida</label>
+                                <input type="date" id="data_saida" class="form-control" name="saida"  placeholder="Digite a data de saida aqui" >
+                            </div>
+               
+                        </fieldset>
+                       
+                        <fieldset class="row">
+                            <div class="col-md-6  mb-3">
+                                <label for="observ" class="form-label text-white">Observações</label>
+                                <textarea id="observ" class="form-control" name="obs" placeholder="Digite suas Observações se houver alguma"></textarea>
+                            </div>                        
+                            <div class="row col-md-6 justify-content-center">
+                                <div class="col-4 col-sm-6 col-md-6 mb-3">
+                                    <label for="txt_crianca" class="form-label text-white">Criança</label>
+                                    <input type="number" id="txt_crianca"  name="qntCrianca"  class="form-control">
+                                </div>
+                                <div class="col-4 col-sm-6 col-md-6 mb-3">
+                                     <label for="txt_adulto" class="form-label text-white">Adulto</label>
+                                    <input type="number" id="txt_adulto" name="qntAdulto" class="form-control">
+                                </div>
+                                <div class=" col-sm-6 col-md-6  text-center">
+                                    <button class="btn btn-light" type="submit">Enviar</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js.js"></script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "reservas": [
+    {
+      "nome": "lucas",
+      "email": "lucas@gmail.com",
+      "entrada": "11/10/2024",
+      "saida": "20/10/2024",
+      "obs": "",
+      "qntCrianca": 1,
+      "qntAdulto": 2,
+      "id": "1"
+    },
+    {
+      "id": "ecae",
+      "nome": "andre",
+      "email": "andre@gmail.com",
+      "entrada": "2024-10-05",
+      "saida": "2024-10-10",
+      "obs": "",
+      "qntCrianca": "1",
+      "qntAdulto": "2"
+    },
+    {
+      "id": "dff7",
+      "nome": "paula souza",
+      "email": "paula@gmail.com",
+      "entrada": "2024-10-02",
+      "saida": "2024-11-05",
+      "obs": "",
+      "qntCrianca": "",
+      "qntAdulto": "1"
+    }
+  ]
+}
